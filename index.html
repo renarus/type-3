@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style type="text/tailwindcss">
+      @layer components {
+        .container {
+          @apply mx-auto;
+        }
+      }
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+
+  <body class="font-medium text-gray-900">
+    <div class="container w-full">
+      <div class="grid gap-4 mt-12 lg:grid-cols-2 justify-items-center">
+        <button
+          id="findStudent"
+          type="btn"
+          class="px-16 py-2 text-white bg-blue-400 rounded hover:bg-blue-500 btn"
+        >
+          Find student
+        </button>
+        <button
+          id="getStudentScore"
+          type="btn"
+          class="px-16 py-2 text-white bg-blue-400 rounded hover:bg-blue-500 btn"
+        >
+          Get student score
+        </button>
+        <button
+          id="getHighScoredStudent"
+          type="btn"
+          class="px-16 py-2 text-white bg-blue-400 rounded hover:bg-blue-500 btn"
+        >
+          Get high scored student
+        </button>
+      </div>
+      <div class="grid gap-8 my-12 border rounded-md shadow-lg lg:grid-cols-2">
+        <div class="flex items-center justify-center">
+          <div class="w-full max-w-xs py-10">
+            <form class="flex flex-col w-full gap-4" id="form">
+              <div class="relative flex flex-col gap-1 group">
+                <label class="text-sm font-semibold">Fullname</label>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  class="w-full px-2 py-1 transition-all border-b-2 outline-none focus:border-sky-500 focus:outline-none placeholder:font-semibold"
+                  placeholder="ex. Fuad Bayramov"
+                  required
+                />
+              </div>
+              <div class="relative flex flex-col gap-1 group">
+                <label class="text-sm font-semibold">Age</label>
+                <input
+                  id="age"
+                  name="age"
+                  type="number"
+                  class="max-w-[60px] px-2 py-1 transition-all border-b-2 outline-none focus:border-sky-500 focus:outline-none placeholder:font-semibold"
+                  placeholder="ex. 21"
+                  required
+                />
+              </div>
+              <div class="relative flex flex-col gap-1 group">
+                <label class="text-sm font-semibold">Academic Year</label>
+                <input
+                  id="academicYear"
+                  name="academicYear"
+                  type="number"
+                  class="max-w-[60px] px-2 py-1 transition-all border-b-2 outline-none focus:border-sky-500 focus:outline-none placeholder:font-semibold"
+                  placeholder="ex. 4"
+                  required
+                />
+              </div>
+              <div class="relative flex flex-col gap-1 group">
+                <label class="text-sm font-semibold">Group</label>
+                <input
+                  id="group"
+                  name="group"
+                  type="text"
+                  class="w-full px-2 py-1 transition-all border-b-2 outline-none focus:border-sky-500 focus:outline-none placeholder:font-semibold"
+                  placeholder="ex. 691.19 or System Engineer"
+                  required
+                />
+              </div>
+              <div class="relative flex flex-col gap-1 group">
+                <label class="text-sm font-semibold">Scope of study</label>
+                <textarea
+                  id="scopeOfStudy"
+                  name="scopeOfStudy"
+                  class="w-full px-2 py-1 transition-all border-b-2 outline-none focus:border-sky-500 focus:outline-none placeholder:font-semibold"
+                  placeholder="ex. What l am doing bla bla"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full py-2 text-white bg-blue-400 rounded hover:bg-blue-500 btn"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="w-full h-full">
+          <div class="flex justify-center w-full h-full bg-blue-500 rounded-r">
+            <div class="w-full max-w-xs py-10">
+              <form id="gradeForm" class="space-y-8">
+                <button
+                  class="w-full px-6 py-2 rounded bg-slate-200 hover:bg-white"
+                >
+                  Add grade
+                </button>
+                <div class="relative flex flex-col gap-1 group">
+                  <label class="text-sm font-semibold text-white"
+                    >Student Id</label
+                  >
+                  <input
+                    id="studentId"
+                    name="studentId"
+                    type="number"
+                    class="w-full px-2 py-1 text-white transition-all bg-transparent border-b-2 border-gray-300 outline-none focus:border-white focus:outline-none placeholder:text-gray-200 placeholder:font-semibold"
+                    placeholder="ex. 4"
+                    required
+                  />
+                </div>
+                <div class="relative flex flex-col gap-1 group">
+                  <label class="text-sm font-semibold text-white"
+                    >Lesson Name</label
+                  >
+                  <input
+                    id="lessonName"
+                    name="lessonName"
+                    type="text"
+                    class="w-full px-2 py-1 text-white transition-all bg-transparent border-b-2 border-gray-300 outline-none focus:border-white focus:outline-none placeholder:text-gray-200 placeholder:font-semibold"
+                    placeholder="ex. 691.19 or System Engineer"
+                    required
+                  />
+                </div>
+                <div class="relative flex flex-col gap-1 group">
+                  <label class="text-sm font-semibold text-white"> Grade</label>
+                  <input
+                    id="grade"
+                    name="grade"
+                    type="number"
+                    class="w-full px-2 py-1 text-white transition-all bg-transparent border-b-2 border-gray-300 outline-none focus:border-white focus:outline-none placeholder:text-gray-200 placeholder:font-semibold"
+                    placeholder="0-100"
+                    required
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
